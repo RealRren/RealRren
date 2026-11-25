@@ -97,12 +97,8 @@ root@realrren:~$ echo $STATUS
 ### `> cat ./featured_project.log`
 
 <p align="center">
-  <a href="https://github.com/RealRren/nexora-engine">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RealRren&repo=nexora-engine&bg_color=000000&title_color=00ff41&text_color=9dffb0&icon_color=00ff41&border_color=00ff41&show_owner=false" alt="nexora-engine"/>
-  </a>
-  <a href="https://github.com/RealRren/nexora-engine-releases">
-    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RealRren&repo=nexora-engine-releases&bg_color=000000&title_color=00ff41&text_color=9dffb0&icon_color=00ff41&border_color=00ff41&show_owner=false" alt="nexora-engine-releases"/>
-  </a>
+  <a href="https://github.com/RealRren/nexora-engine"><img src="./assets/card-nexora-engine.svg" width="49%" alt="nexora-engine"/></a>
+  <a href="https://github.com/RealRren/nexora-engine-releases"><img src="./assets/card-nexora-releases.svg" width="49%" alt="nexora-engine-releases"/></a>
 </p>
 
 ```diff
@@ -117,7 +113,10 @@ root@realrren:~$ echo $STATUS
 ### `> system_stats --user RealRren`
 
 <p align="center">
-  <img height="170" src="https://github-readme-stats.vercel.app/api?username=RealRren&show_icons=true&count_private=true&include_all_commits=true&hide_border=false&bg_color=000000&title_color=00ff41&text_color=9dffb0&icon_color=00ff41&border_color=00ff41&ring_color=00ff41" alt="stats"/>
+  <img src="./assets/stats.svg" width="95%" alt="stats"/>
+</p>
+
+<p align="center">
   <img height="170" src="https://streak-stats.demolab.com?user=RealRren&background=000000&border=00FF41&stroke=00FF41&ring=00FF41&fire=00FF41&currStreakNum=00FF41&sideNums=00FF41&currStreakLabel=00FF41&sideLabels=9DFFB0&dates=9DFFB0" alt="streak"/>
 </p>
 

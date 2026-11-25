@@ -19,6 +19,12 @@
   <img src="./assets/boot-sequence.svg" width="90%" alt="boot sequence"/>
 </p>
 
+### `> ./player --status`
+
+<p align="center">
+  <img src="https://github.com/RealRren/RealRren/raw/main/assets/hud.svg" width="95%" alt="player HUD"/>
+</p>
+
 ---
 
 ```bash

@@ -218,3 +218,84 @@ tsvg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{TW_ALL}" height="{TH}
 with open("assets/trophies.svg", "w", encoding="utf-8") as f:
     f.write(tsvg)
 print("trophies:", ", ".join(f"{t[0]}={rank(t[2], t[3])}" for t in trophies))
+
+
+# ---------------------------------------------------------------------------
+# Player HUD (assets/hud.svg): game-style status bars from the same numbers.
+import math as _m
+
+
+def _next_rank_goal(value, steps):
+    for need in steps:
+        if value < need:
+            return need
+    return max(value, steps[-1])
+
+
+level = int(_m.sqrt(totals["all"] / 5))
+lvl_lo, lvl_hi = 5 * level ** 2, 5 * (level + 1) ** 2
+pr_goal = _next_rank_goal(merged_prs, [1, 5, 20, 50, 100, 200, 500, 1000])
+streak_goal = max(longest, 30)
+bars = [
+    ("HP", "streak", current, streak_goal, f"{current} / {streak_goal} days", "#00ff41", False),
+    ("XP", f"to LVL {level+1}", totals["all"] - lvl_lo, lvl_hi - lvl_lo, f"{fmt(totals['all'])} / {fmt(lvl_hi)}", "#00ff41", True),
+    ("MP", "merged PRs", merged_prs, pr_goal, f"{merged_prs} / {pr_goal}", "#9dffb0", False),
+]
+
+HW, HH = 820, 210
+BX, BW = 250, 440
+parts = []
+# pixel R avatar
+R = ["111110", "110011", "110011", "111110", "111100", "110110", "110011"]
+px = 16
+for r, row in enumerate(R):
+    for c, ch in enumerate(row):
+        if ch == "1":
+            parts.append(f'<rect x="{62+c*px}" y="{50+r*px}" width="{px-3}" height="{px-3}" fill="#00ff41"/>')
+avatar = (f'<g><animateTransform attributeName="transform" type="translate" values="0 0;0 -3;0 0" dur="1.6s" '
+          f'repeatCount="indefinite" calcMode="discrete"/>{"".join(parts)}</g>')
+rows = []
+for i, (tag, label, val, goal, txt, col, striped) in enumerate(bars):
+    y = 62 + i * 42
+    w = max(4, round(BW * min(val / goal, 1))) if goal else BW
+    fill = 'url(#stripe)' if striped else col
+    rows.append(
+        f'<text class="tag" x="{BX-14}" y="{y+13}" text-anchor="end">{tag}</text>'
+        f'<rect x="{BX}" y="{y}" width="{BW}" height="16" fill="none" stroke="#00ff41" stroke-width="1.5"/>'
+        f'<rect x="{BX+3}" y="{y+3}" width="{w-6}" height="10" fill="{fill}">'
+        f'<animate attributeName="width" from="0" to="{w-6}" dur="{1.4+0.4*i:.1f}s" begin="{0.3*i:.1f}s" fill="freeze" calcMode="spline" keySplines=".2 .8 .2 1" keyTimes="0;1"/>'
+        f'</rect>'
+        f'<text class="lbl" x="{BX}" y="{y-5}">{label}</text>'
+        f'<text class="num" x="{BX+BW}" y="{y-5}" text-anchor="end">{txt}</text>'
+    )
+popups = "".join(
+    f'<text class="pop" x="{BX+BW+30}" y="150" opacity="0">{t}'
+    f'<animate attributeName="opacity" values="0;1;1;0" keyTimes="0;.15;.7;1" dur="2.4s" begin="{1.2+2.4*i:.1f}s;pop{i}.end+{2.4*(len(bars)-1):.1f}s" id="pop{i}"/>'
+    f'<animate attributeName="y" values="150;110" dur="2.4s" begin="{1.2+2.4*i:.1f}s;pop{i}.end+{2.4*(len(bars)-1):.1f}s"/></text>'
+    for i, t in enumerate([f"+{fmt(last30)} XP", f"{current}d streak", f"+{merged_prs} MP"]))
+
+hud = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{HW}" height="{HH}" viewBox="0 0 {HW} {HH}">
+<defs><pattern id="stripe" width="10" height="10" patternUnits="userSpaceOnUse"><rect width="8" height="10" fill="#00ff41"/>
+<animateTransform attributeName="patternTransform" type="translate" from="0 0" to="10 0" dur=".6s" repeatCount="indefinite"/></pattern></defs>
+<style>
+.h{{font:bold 15px 'Courier New',monospace;fill:#00ff41}}
+.tag{{font:bold 15px 'Courier New',monospace;fill:#00ff41}}
+.lbl{{font:12px 'Courier New',monospace;fill:#3f8f50}}
+.num{{font:bold 12px 'Courier New',monospace;fill:#9dffb0}}
+.pop{{font:bold 14px 'Courier New',monospace;fill:#9dffb0}}
+.s{{font:11px 'Courier New',monospace;fill:#3f8f50}}
+</style>
+<rect x="0.75" y="0.75" width="{HW-1.5}" height="{HH-1.5}" rx="8" fill="#000" stroke="#00ff41" stroke-width="1.5"/>
+<rect x="44" y="34" width="132" height="148" fill="none" stroke="#00ff41" stroke-opacity=".5"/>
+{avatar}
+<text class="h" x="110" y="26" text-anchor="middle">PLAYER 1</text>
+<text class="s" x="110" y="200" text-anchor="middle">RealRren</text>
+<text class="h" x="{BX}" y="30">CLASS: GAME DEV / MOBILE / DESKTOP</text>
+<text class="h" x="{BX+BW}" y="30" text-anchor="end">LVL {level}<animate attributeName="opacity" values="1;0;1" dur="1s" calcMode="discrete" repeatCount="indefinite"/></text>
+{''.join(rows)}
+{popups}
+<text class="s" x="{HW-20}" y="{HH-12}" text-anchor="end">updated {today:%Y-%m-%d}</text>
+</svg>"""
+with open("assets/hud.svg", "w", encoding="utf-8") as f:
+    f.write(hud)
+print("hud: LVL", level, [(b[0], b[2], b[3]) for b in bars])

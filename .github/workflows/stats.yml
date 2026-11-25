@@ -24,6 +24,7 @@ jobs:
       - name: Build stats card
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PRS_TOKEN: ${{ secrets.PRS_TOKEN }}
           USERNAME: ${{ github.repository_owner }}
         run: python3 scripts/stats_card.py
       - name: Commit card

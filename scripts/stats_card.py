@@ -152,13 +152,34 @@ def rank(value, steps):
 
 
 years_on = (today - dt.date.fromisoformat(created)).days / 365.25
+
+# Merged PRs. The workflow's GITHUB_TOKEN cannot see private repos, so with an
+# optional PRS_TOKEN secret (read-only token of the profile owner) we count
+# merged PRs across private repos too; otherwise fall back to public PRs.
+merged_prs, pr_unit = totals["prs"], "PRs"
+PRS_TOKEN = os.environ.get("PRS_TOKEN", "").strip()
+if PRS_TOKEN:
+    try:
+        req = urllib.request.Request(
+            "https://api.github.com/graphql",
+            data=json.dumps({
+                "query": "query($q:String!){search(query:$q,type:ISSUE,first:1){issueCount}}",
+                "variables": {"q": f"is:pr is:merged author:{USER}"},
+            }).encode(),
+            headers={"Authorization": f"bearer {PRS_TOKEN}", "Content-Type": "application/json"},
+        )
+        with urllib.request.urlopen(req) as r:
+            merged_prs = json.load(r)["data"]["search"]["issueCount"]
+        pr_unit = "merged PRs"
+    except Exception as e:  # keep the card building even if the token is bad
+        print("PRS_TOKEN lookup failed:", e)
 trophies = [
     ("CONTRIBUTOR", "total", totals["all"], [1, 100, 300, 700, 1500, 3000, 6000, 10000]),
     ("COMMITTER", "commits", totals["commits"], [1, 50, 200, 500, 1000, 2000, 4000, 8000]),
     ("STEALTH OPS", "private", totals["private"], [1, 50, 200, 500, 1000, 2000, 4000, 8000]),
     ("STREAKER", "day streak", longest, [1, 3, 7, 14, 30, 60, 100, 200]),
     ("GRINDER", "active days", len(active), [1, 20, 50, 100, 200, 365, 600, 1000]),
-    ("MERGER", "PRs", totals["prs"], [1, 5, 20, 50, 100, 200, 500, 1000]),
+    ("MERGER", pr_unit, merged_prs, [1, 5, 20, 50, 100, 200, 500, 1000]),
     ("VETERAN", "years", round(years_on, 1), [0, 0.5, 1, 2, 3, 5, 7, 10]),
 ]
 

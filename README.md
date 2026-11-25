@@ -129,7 +129,7 @@ root@realrren:~$ echo $STATUS
 ### `> ./trophies --unlock-all`
 
 <p align="center">
-  <img src="https://github-profile-trophy.vercel.app/?username=RealRren&theme=matrix&no-frame=true&no-bg=true&margin-w=6&row=1&column=7" alt="trophies"/>
+  <img src="https://github.com/RealRren/RealRren/raw/main/assets/trophies.svg" alt="trophies"/>
 </p>
 
 ---

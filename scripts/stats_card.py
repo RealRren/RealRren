@@ -134,3 +134,66 @@ os.makedirs("assets", exist_ok=True)
 with open("assets/stats.svg", "w", encoding="utf-8") as f:
     f.write(svg)
 print("\n".join(f"{k}: {v}" for k, v in rows))
+
+
+# ---------------------------------------------------------------------------
+# Trophies card (assets/trophies.svg) built from the same data, so the profile
+# does not depend on an outside trophy service.
+RANKS = ["SSS", "SS", "S", "AAA", "AA", "A", "B", "C"]
+
+
+def rank(value, steps):
+    """steps: thresholds for C..SSS (ascending, 8 values)."""
+    got = None
+    for name, need in zip(reversed(RANKS), steps):
+        if value >= need:
+            got = name
+    return got or "?"
+
+
+years_on = (today - dt.date.fromisoformat(created)).days / 365.25
+trophies = [
+    ("CONTRIBUTOR", "total", totals["all"], [1, 100, 300, 700, 1500, 3000, 6000, 10000]),
+    ("COMMITTER", "commits", totals["commits"], [1, 50, 200, 500, 1000, 2000, 4000, 8000]),
+    ("STEALTH OPS", "private", totals["private"], [1, 50, 200, 500, 1000, 2000, 4000, 8000]),
+    ("STREAKER", "day streak", longest, [1, 3, 7, 14, 30, 60, 100, 200]),
+    ("GRINDER", "active days", len(active), [1, 20, 50, 100, 200, 365, 600, 1000]),
+    ("MERGER", "PRs", totals["prs"], [1, 5, 20, 50, 100, 200, 500, 1000]),
+    ("VETERAN", "years", round(years_on, 1), [0, 0.5, 1, 2, 3, 5, 7, 10]),
+]
+
+TW, TH, GAP = 110, 132, 8
+TW_ALL = len(trophies) * TW + (len(trophies) - 1) * GAP
+cup = ("M-14 -22 h28 v10 a14 14 0 0 1 -28 0 z M-14 -18 h-7 a7 7 0 0 0 7 9 "
+       "M14 -18 h7 a7 7 0 0 1 -7 9 M-3 2 h6 v7 h-6 z M-10 9 h20 v4 h-20 z")
+items = []
+for i, (title, unit, val, steps) in enumerate(trophies):
+    r = rank(val, steps)
+    x = i * (TW + GAP)
+    lit = r != "?"
+    col = "#00ff41" if lit else "#1f5f2c"
+    glow = ' filter="url(#g)"' if r in ("SSS", "SS", "S") else ""
+    shown = fmt(val) if isinstance(val, int) else f"{val}"
+    items.append(
+        f'<g class="t" style="animation-delay:{0.12*i:.2f}s" transform="translate({x},0)">'
+        f'<rect x="0.75" y="0.75" width="{TW-1.5}" height="{TH-1.5}" rx="6" fill="#000" stroke="{col}" stroke-opacity=".6"/>'
+        f'<text class="r" x="{TW/2}" y="22" text-anchor="middle" fill="{col}">{r}</text>'
+        f'<g transform="translate({TW/2},62)"><path d="{cup}" fill="none" stroke="{col}" stroke-width="2"{glow}/></g>'
+        f'<text class="n" x="{TW/2}" y="98" text-anchor="middle">{title}</text>'
+        f'<text class="u" x="{TW/2}" y="116" text-anchor="middle">{shown} {unit}</text></g>'
+    )
+
+tsvg = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{TW_ALL}" height="{TH}" viewBox="0 0 {TW_ALL} {TH}">
+<defs><filter id="g" x="-50%" y="-50%" width="200%" height="200%"><feGaussianBlur stdDeviation="2.2" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter></defs>
+<style>
+.r{{font:bold 15px 'Courier New',monospace}}
+.n{{font:bold 11px 'Courier New',monospace;fill:#00ff41}}
+.u{{font:10px 'Courier New',monospace;fill:#9dffb0}}
+.t{{opacity:0;animation:up .45s ease-out forwards}}
+@keyframes up{{from{{opacity:0;transform:translateY(6px)}}to{{opacity:1}}}}
+</style>
+{''.join(items)}
+</svg>"""
+with open("assets/trophies.svg", "w", encoding="utf-8") as f:
+    f.write(tsvg)
+print("trophies:", ", ".join(f"{t[0]}={rank(t[2], t[3])}" for t in trophies))

@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="820" height="310" viewBox="0 0 820 310">
+<style>
+text{font:15px 'Courier New',monospace;fill:#9dffb0;white-space:pre}
+.l,.w,.p{opacity:0;animation:show .05s forwards}
+.p{fill:#00ff41;font-weight:bold}
+.ok{fill:#00ff41;font-weight:bold} .wa{fill:#ffcc00;font-weight:bold}
+.bar{transform-box:fill-box;transform-origin:left;transform:scaleX(0);animation:fill 1.6s ease-out forwards}
+@keyframes show{to{opacity:1}}
+@keyframes fill{to{transform:scaleX(1)}}
+</style>
+<rect width="100%" height="100%" rx="10" fill="#000" stroke="#00ff41" stroke-width="1.5"/>
+<rect width="100%" height="30" rx="10" fill="#031a08"/>
+<circle cx="20" cy="15" r="6" fill="#ff5f56"/><circle cx="40" cy="15" r="6" fill="#ffbd2e"/><circle cx="60" cy="15" r="6" fill="#27c93f"/>
+<text x="410.0" y="20" text-anchor="middle" style="fill:#00ff41;font-size:13px">root@realrren: ~/boot</text>
+<text class="p" x="24" y="50" style="animation-delay:0.40s">$ sudo ./boot_realrren.sh</text><text class="l" x="24" y="74" style="animation-delay:0.95s">[<tspan class="ok"> OK </tspan>] Loading kernel: arcline_studios.ko</text><text class="l" x="24" y="98" style="animation-delay:1.50s">[<tspan class="ok"> OK </tspan>] Mounting /dev/godot ............ GDScript</text><text class="l" x="24" y="122" style="animation-delay:2.05s">[<tspan class="ok"> OK </tspan>] Mounting /dev/unreal ........... C++</text><text class="l" x="24" y="146" style="animation-delay:2.60s">[<tspan class="ok"> OK </tspan>] Starting mobile.service ........ React Native + Expo</text><text class="l" x="24" y="170" style="animation-delay:3.15s">[<tspan class="ok"> OK </tspan>] Starting desktop.service ....... Tauri + Electron</text><text class="l" x="24" y="194" style="animation-delay:3.70s">[<tspan class="ok"> OK </tspan>] Connecting backend ............. Supabase / Postgres</text><g class="l" style="animation-delay:4.25s"><text x="24" y="218">Compiling projects</text><rect x="250" y="205" width="360" height="14" fill="none" stroke="#00ff41" stroke-width="1"/><rect class="bar" x="252" y="207" width="327" height="10" fill="#00ff41" style="animation-delay:4.25s"/><text x="624" y="218">92%</text></g><g class="l" style="animation-delay:4.80s"><text x="24" y="242">Brewing coffee</text><rect x="250" y="229" width="360" height="14" fill="none" stroke="#00ff41" stroke-width="1"/><rect class="bar" x="252" y="231" width="226" height="10" fill="#00ff41" style="animation-delay:4.80s"/><text x="624" y="242">64%</text></g><text class="w" x="24" y="266" style="animation-delay:5.35s">[<tspan class="wa">WARN</tspan>] 13 repos marked CLASSIFIED</text><text class="p" x="24" y="290" style="animation-delay:5.90s">$ system ready. welcome, visitor_</text>
+</svg>

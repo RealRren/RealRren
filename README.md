@@ -15,6 +15,12 @@
 
 ---
 
+<p align="center">
+  <img src="./assets/boot-sequence.svg" width="90%" alt="boot sequence"/>
+</p>
+
+---
+
 ```bash
 root@realrren:~$ whoami
 > RealRren — software developer building desktop apps, mobile apps & games
@@ -34,6 +40,36 @@ root@realrren:~$ ls ./projects
 root@realrren:~$ echo $STATUS
 > currently compiling something big... stay tuned_
 ```
+
+---
+
+### `> ls ./focus_areas/`
+
+<table align="center">
+  <tr>
+    <td align="center" width="33%">
+      <h3>🎮</h3>
+      <b><code>/game_dev</code></b><br/><br/>
+      Godot · Unreal Engine<br/>
+      GDScript · C++<br/><br/>
+      <sub>gameplay systems, AI, survival &amp; zombie games</sub>
+    </td>
+    <td align="center" width="33%">
+      <h3>📱</h3>
+      <b><code>/mobile_apps</code></b><br/><br/>
+      React Native · Expo<br/>
+      TypeScript · Supabase<br/><br/>
+      <sub>cross-platform apps for Android &amp; iOS</sub>
+    </td>
+    <td align="center" width="33%">
+      <h3>🖥️</h3>
+      <b><code>/desktop_apps</code></b><br/><br/>
+      Tauri · Electron<br/>
+      Rust · TypeScript · JS<br/><br/>
+      <sub>fast native tools that work online &amp; offline</sub>
+    </td>
+  </tr>
+</table>
 
 ---
 
@@ -58,6 +94,26 @@ root@realrren:~$ echo $STATUS
 
 ---
 
+### `> cat ./featured_project.log`
+
+<p align="center">
+  <a href="https://github.com/RealRren/nexora-engine">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RealRren&repo=nexora-engine&bg_color=000000&title_color=00ff41&text_color=9dffb0&icon_color=00ff41&border_color=00ff41&show_owner=false" alt="nexora-engine"/>
+  </a>
+  <a href="https://github.com/RealRren/nexora-engine-releases">
+    <img src="https://github-readme-stats.vercel.app/api/pin/?username=RealRren&repo=nexora-engine-releases&bg_color=000000&title_color=00ff41&text_color=9dffb0&icon_color=00ff41&border_color=00ff41&show_owner=false" alt="nexora-engine-releases"/>
+  </a>
+</p>
+
+```diff
++ [ACTIVE]      Nexora Engine ........ contractor quoting & invoicing for Windows
++ [ACTIVE]      Mobile apps .......... React Native + Supabase
++ [ACTIVE]      Games ................ Godot & Unreal projects in development
+- [CLASSIFIED]  more coming soon...   access level insufficient 🔒
+```
+
+---
+
 ### `> system_stats --user RealRren`
 
 <p align="center">
@@ -71,6 +127,22 @@ root@realrren:~$ echo $STATUS
 
 ---
 
+### `> ./trophies --unlock-all`
+
+<p align="center">
+  <img src="https://github-profile-trophy.vercel.app/?username=RealRren&theme=matrix&no-frame=true&no-bg=true&margin-w=6&row=1&column=7" alt="trophies"/>
+</p>
+
+---
+
+### `> render --3d contributions.dat`
+
+<p align="center">
+  <img src="./profile-3d-contrib/profile-night-green.svg" width="95%" alt="3D contribution graph"/>
+</p>
+
+---
+
 ### `> ./snake.exe --eat-contributions`
 
 <p align="center">
@@ -79,6 +151,30 @@ root@realrren:~$ echo $STATUS
 
 ---
 
+<details>
+<summary><b><code>> decrypt --file secret_dev_files.enc</code> 🔐 (click to decrypt)</b></summary>
+<br/>
+
+```yaml
+decrypting... ████████████████ 100%
+
+current_mission:  shipping apps from idea → release
+favorite_combo:   Rust backend + TypeScript frontend (Tauri)
+game_genres:      survival, zombies, systems-heavy gameplay
+debug_method:     console.log() until it confesses
+fuel:             ☕ coffee + 🎧 music
+fun_fact:         most of my best work is still hidden in private repos 👀
+motto:            "it works on my machine" → ships it anyway
+```
+
+</details>
+
+---
+
 <p align="center">
   <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&size=16&pause=1000&color=00FF41&center=true&vCenter=true&width=500&lines=%3E+connection+terminated.;%3E+thanks+for+visiting+%F0%9F%91%BE" alt="outro"/>
+</p>
+
+<p align="center">
+  <img src="https://capsule-render.vercel.app/api?type=waving&color=0:000000,50:003b0f,100:00ff41&height=120&section=footer" width="100%" alt="footer"/>
 </p>

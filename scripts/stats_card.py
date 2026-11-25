@@ -81,15 +81,19 @@ def fmt(n):
     return f"{n/1000:.1f}k" if n >= 10000 else f"{n:,}"
 
 
+active = [d for d in dates if days[d] > 0]
+this_year = sum(days[d] for d in dates if d.startswith(str(today.year)))
+avg = totals["all"] / max(len(active), 1)
+
 rows = [
     ("TOTAL CONTRIBUTIONS", fmt(totals["all"])),
-    ("COMMITS (PUBLIC)", fmt(totals["commits"])),
     ("PRIVATE CONTRIBUTIONS", fmt(totals["private"]) + " \U0001f512"),
-    ("PULL REQUESTS", fmt(totals["prs"])),
-    ("REPOS CREATED", fmt(totals["repos"])),
+    (f"CONTRIBUTIONS IN {today.year}", fmt(this_year)),
     ("LAST 30 DAYS", fmt(last30)),
-    ("CURRENT STREAK", f"{current} days"),
+    ("CURRENT STREAK", f"{current} days \U0001f525"),
     ("LONGEST STREAK", f"{longest} days"),
+    ("DAYS ACTIVE", fmt(len(active))),
+    ("AVG PER ACTIVE DAY", f"{avg:.1f}"),
     ("BEST DAY", f"{days[best_day]} on {dt.date.fromisoformat(best_day):%b %d %Y}"),
     ("MOST ACTIVE DAY", fav_day),
 ]

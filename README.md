@@ -17,7 +17,9 @@
 
 ```bash
 root@realrren:~$ whoami
-> RealRren — developer who builds games, apps & tools
+> RealRren — software developer building desktop apps, mobile apps & games
+> role ......... Lead @ Arcline Studios
+> location ..... Sri Lanka 🇱🇰
 
 root@realrren:~$ cat skills.txt
 > [■■■■■■■■■■] Game Dev ........ Godot (GDScript) · Unreal Engine (C++)
@@ -27,7 +29,7 @@ root@realrren:~$ cat skills.txt
 
 root@realrren:~$ ls ./projects
 > 🔒 [CLASSIFIED]  most projects are private & under active development
-> 📦 nexora-engine  (public)
+> 📦 nexora-engine  quotes, invoices & estimating tools for contractors (Windows, online/offline)
 
 root@realrren:~$ echo $STATUS
 > currently compiling something big... stay tuned_

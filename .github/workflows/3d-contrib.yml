@@ -9,6 +9,10 @@ on:
     paths-ignore:
       - "profile-3d-contrib/**"
 
+concurrency:
+  group: profile-commits
+  cancel-in-progress: false
+
 permissions:
   contents: write
 

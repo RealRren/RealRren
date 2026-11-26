@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/RealRren">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=800&color=00FF41&center=true&vCenter=true&width=650&lines=%3E+Initializing+RealRren...;%3E+Game+Dev+%7C+Godot+%2B+Unreal+Engine;%3E+Minecraft+Modder+%7C+Forge+%2B+Java;%3E+Mobile+App+Developer;%3E+Desktop+App+Developer;%3E+Building+in+stealth+mode...+%F0%9F%94%92" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=800&color=00FF41&center=true&vCenter=true&width=650&lines=%3E+Initializing+RealRren...;%3E+Game+Dev+%7C+Godot+%2B+Unreal+Engine;%3E+Minecraft+Modder+%7C+Forge+%2B+Java;%3E+Mobile+App+Developer;%3E+Desktop+App+Developer;%3E+Web+Designer+%7C+Client+Websites;%3E+Building+in+stealth+mode...+%F0%9F%94%92" alt="Typing SVG" />
   </a>
 </p>
 
@@ -29,7 +29,7 @@
 
 ```bash
 root@realrren:~$ whoami
-> RealRren — software developer building desktop apps, mobile apps, games & Minecraft mods
+> RealRren — software developer building desktop apps, mobile apps, websites, games & Minecraft mods
 > role ......... Lead @ Arcline Studios
 > location ..... Sri Lanka 🇱🇰
 
@@ -38,12 +38,13 @@ root@realrren:~$ cat skills.txt
 > [■■■■■■■■■□] Minecraft Mods .. Forge 1.20.1 · Java 17 · server-side AI mods
 > [■■■■■■■■■□] Mobile Apps ..... React Native · Expo · Supabase
 > [■■■■■■■■■□] Desktop Apps .... Tauri (Rust + TS) · Electron
-> [■■■■■■■■□□] Web ............. TypeScript · JavaScript · HTML/CSS
+> [■■■■■■■■■□] Web Design ...... client websites · HTML/CSS/JS · Cloudflare Pages
 
 root@realrren:~$ ls ./projects
 > 🔒 [CLASSIFIED]  most projects are private & under active development
 > 📦 nexora-engine  quotes, invoices & estimating tools for contractors (Windows, online/offline)
 > ⛏️ adaptive-zombie-survival  Forge mod: zombies that break, dig & pillar up to reach you (MC 1.20.1)
+> 🌐 pyromax-site  website for Pyromax Engineering, a fire engineering consultancy (launching Dec 2026)
 
 root@realrren:~$ echo $STATUS
 > currently compiling something big... stay tuned_
@@ -55,7 +56,7 @@ root@realrren:~$ echo $STATUS
 
 <table align="center">
   <tr>
-    <td align="center" width="33%">
+    <td align="center" width="25%">
       <h3>🎮</h3>
       <b><code>/game_dev</code></b><br/><br/>
       Godot · Unreal Engine<br/>
@@ -63,19 +64,26 @@ root@realrren:~$ echo $STATUS
       GDScript · C++ · Java<br/><br/>
       <sub>gameplay systems, AI, survival &amp; zombie games, Minecraft mods</sub>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="25%">
       <h3>📱</h3>
       <b><code>/mobile_apps</code></b><br/><br/>
       React Native · Expo<br/>
       TypeScript · Supabase<br/><br/>
       <sub>cross-platform apps for Android &amp; iOS</sub>
     </td>
-    <td align="center" width="33%">
+    <td align="center" width="25%">
       <h3>🖥️</h3>
       <b><code>/desktop_apps</code></b><br/><br/>
       Tauri · Electron<br/>
       Rust · TypeScript · JS<br/><br/>
       <sub>fast native tools that work online &amp; offline</sub>
+    </td>
+    <td align="center" width="25%">
+      <h3>🌐</h3>
+      <b><code>/web_design</code></b><br/><br/>
+      HTML · CSS · JS<br/>
+      Cloudflare Pages<br/><br/>
+      <sub>fast, responsive websites for businesses</sub>
     </td>
   </tr>
 </table>
@@ -89,7 +97,7 @@ root@realrren:~$ echo $STATUS
   <br/>
   <img src="https://skillicons.dev/icons?i=react,tauri,electron,nodejs,vite,supabase,postgres,html,css&theme=dark" alt="frameworks"/>
   <br/>
-  <img src="https://skillicons.dev/icons?i=git,github,githubactions,vscode,visualstudio,powershell,bash,windows&theme=dark" alt="tools"/>
+  <img src="https://skillicons.dev/icons?i=git,github,githubactions,cloudflare,vscode,visualstudio,powershell,bash,windows&theme=dark" alt="tools"/>
 </p>
 
 <p align="center">
@@ -101,6 +109,7 @@ root@realrren:~$ echo $STATUS
   <img src="https://img.shields.io/badge/React_Native-000000?style=for-the-badge&logo=react&logoColor=00ff41" />
   <img src="https://img.shields.io/badge/Tauri-000000?style=for-the-badge&logo=tauri&logoColor=00ff41" />
   <img src="https://img.shields.io/badge/Electron-000000?style=for-the-badge&logo=electron&logoColor=00ff41" />
+  <img src="https://img.shields.io/badge/Cloudflare_Pages-000000?style=for-the-badge&logo=cloudflarepages&logoColor=00ff41" />
 </p>
 
 ---
@@ -116,6 +125,7 @@ root@realrren:~$ echo $STATUS
 + [ACTIVE]      Nexora Engine ........ contractor quoting & invoicing for Windows
 + [ACTIVE]      Mobile apps .......... React Native + Supabase
 + [ACTIVE]      Minecraft mods ....... Adaptive Zombie Survival (Forge 1.20.1)
++ [ACTIVE]      Client websites ...... Pyromax Engineering (launching Dec 2026)
 + [ACTIVE]      Games ................ Godot & Unreal projects in development
 - [CLASSIFIED]  more coming soon...   access level insufficient 🔒
 ```

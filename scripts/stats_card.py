@@ -290,7 +290,7 @@ hud = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{HW}" height="{HH}" vie
 {avatar}
 <text class="h" x="110" y="26" text-anchor="middle">PLAYER 1</text>
 <text class="s" x="110" y="200" text-anchor="middle">RealRren</text>
-<text class="h" x="{BX}" y="30">CLASS: GAME DEV / MOBILE / DESKTOP</text>
+<text class="h" x="{BX}" y="30">CLASS: GAMES / MC MODS / MOBILE / DESKTOP</text>
 <text class="h" x="{BX+BW}" y="30" text-anchor="end">LVL {level}<animate attributeName="opacity" values="1;0;1" dur="1s" calcMode="discrete" repeatCount="indefinite"/></text>
 {''.join(rows)}
 {popups}

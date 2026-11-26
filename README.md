@@ -4,7 +4,7 @@
 
 <p align="center">
   <a href="https://github.com/RealRren">
-    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=800&color=00FF41&center=true&vCenter=true&width=650&lines=%3E+Initializing+RealRren...;%3E+Game+Dev+%7C+Godot+%2B+Unreal+Engine;%3E+Mobile+App+Developer;%3E+Desktop+App+Developer;%3E+Building+in+stealth+mode...+%F0%9F%94%92" alt="Typing SVG" />
+    <img src="https://readme-typing-svg.demolab.com?font=Fira+Code&weight=600&size=22&duration=2500&pause=800&color=00FF41&center=true&vCenter=true&width=650&lines=%3E+Initializing+RealRren...;%3E+Game+Dev+%7C+Godot+%2B+Unreal+Engine;%3E+Minecraft+Modder+%7C+Forge+%2B+Java;%3E+Mobile+App+Developer;%3E+Desktop+App+Developer;%3E+Building+in+stealth+mode...+%F0%9F%94%92" alt="Typing SVG" />
   </a>
 </p>
 
@@ -29,12 +29,13 @@
 
 ```bash
 root@realrren:~$ whoami
-> RealRren — software developer building desktop apps, mobile apps & games
+> RealRren — software developer building desktop apps, mobile apps, games & Minecraft mods
 > role ......... Lead @ Arcline Studios
 > location ..... Sri Lanka 🇱🇰
 
 root@realrren:~$ cat skills.txt
 > [■■■■■■■■■■] Game Dev ........ Godot (GDScript) · Unreal Engine (C++)
+> [■■■■■■■■■□] Minecraft Mods .. Forge 1.20.1 · Java 17 · server-side AI mods
 > [■■■■■■■■■□] Mobile Apps ..... React Native · Expo · Supabase
 > [■■■■■■■■■□] Desktop Apps .... Tauri (Rust + TS) · Electron
 > [■■■■■■■■□□] Web ............. TypeScript · JavaScript · HTML/CSS
@@ -42,6 +43,7 @@ root@realrren:~$ cat skills.txt
 root@realrren:~$ ls ./projects
 > 🔒 [CLASSIFIED]  most projects are private & under active development
 > 📦 nexora-engine  quotes, invoices & estimating tools for contractors (Windows, online/offline)
+> ⛏️ adaptive-zombie-survival  Forge mod: zombies that break, dig & pillar up to reach you (MC 1.20.1)
 
 root@realrren:~$ echo $STATUS
 > currently compiling something big... stay tuned_
@@ -57,8 +59,9 @@ root@realrren:~$ echo $STATUS
       <h3>🎮</h3>
       <b><code>/game_dev</code></b><br/><br/>
       Godot · Unreal Engine<br/>
-      GDScript · C++<br/><br/>
-      <sub>gameplay systems, AI, survival &amp; zombie games</sub>
+      Minecraft Forge<br/>
+      GDScript · C++ · Java<br/><br/>
+      <sub>gameplay systems, AI, survival &amp; zombie games, Minecraft mods</sub>
     </td>
     <td align="center" width="33%">
       <h3>📱</h3>
@@ -82,7 +85,7 @@ root@realrren:~$ echo $STATUS
 ### `> tech_stack --list`
 
 <p align="center">
-  <img src="https://skillicons.dev/icons?i=godot,unreal,cpp,c,cs,rust,ts,js,py&theme=dark" alt="languages"/>
+  <img src="https://skillicons.dev/icons?i=godot,unreal,cpp,c,cs,java,rust,ts,js,py&theme=dark" alt="languages"/>
   <br/>
   <img src="https://skillicons.dev/icons?i=react,tauri,electron,nodejs,vite,supabase,postgres,html,css&theme=dark" alt="frameworks"/>
   <br/>
@@ -92,6 +95,8 @@ root@realrren:~$ echo $STATUS
 <p align="center">
   <img src="https://img.shields.io/badge/GDScript-000000?style=for-the-badge&logo=godotengine&logoColor=00ff41" />
   <img src="https://img.shields.io/badge/Unreal_Engine-000000?style=for-the-badge&logo=unrealengine&logoColor=00ff41" />
+  <img src="https://img.shields.io/badge/Minecraft_Forge-000000?style=for-the-badge&logo=curseforge&logoColor=00ff41" />
+  <img src="https://img.shields.io/badge/Java-000000?style=for-the-badge&logo=openjdk&logoColor=00ff41" />
   <img src="https://img.shields.io/badge/Expo-000000?style=for-the-badge&logo=expo&logoColor=00ff41" />
   <img src="https://img.shields.io/badge/React_Native-000000?style=for-the-badge&logo=react&logoColor=00ff41" />
   <img src="https://img.shields.io/badge/Tauri-000000?style=for-the-badge&logo=tauri&logoColor=00ff41" />
@@ -110,6 +115,7 @@ root@realrren:~$ echo $STATUS
 ```diff
 + [ACTIVE]      Nexora Engine ........ contractor quoting & invoicing for Windows
 + [ACTIVE]      Mobile apps .......... React Native + Supabase
++ [ACTIVE]      Minecraft mods ....... Adaptive Zombie Survival (Forge 1.20.1)
 + [ACTIVE]      Games ................ Godot & Unreal projects in development
 - [CLASSIFIED]  more coming soon...   access level insufficient 🔒
 ```

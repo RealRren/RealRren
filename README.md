@@ -147,7 +147,7 @@ root@realrren:~$ echo $STATUS
 </p>
 
 <p align="center">
-  <img width="95%" src="https://github-readme-activity-graph.vercel.app/graph?username=RealRren&bg_color=000000&color=9dffb0&line=00ff41&point=ffffff&area=true&area_color=00ff41&title_color=00ff41&hide_border=false&border_color=00ff41" alt="activity graph"/>
+  <img width="95%" src="https://github.com/RealRren/RealRren/raw/main/assets/activity.svg" alt="activity graph"/>
 </p>
 
 ---

@@ -27,66 +27,17 @@
 
 ---
 
-```bash
-root@realrren:~$ whoami
-> RealRren — software developer building desktop apps, mobile apps, websites, games & Minecraft mods
-> role ......... Lead @ Arcline Studios
-> location ..... Sri Lanka 🇱🇰
-
-root@realrren:~$ cat skills.txt
-> [■■■■■■■■■■] Game Dev ........ Godot (GDScript) · Unreal Engine (C++)
-> [■■■■■■■■■□] Minecraft Mods .. Forge 1.20.1 · Java 17 · server-side AI mods
-> [■■■■■■■■■□] Mobile Apps ..... React Native · Expo · Supabase
-> [■■■■■■■■■□] Desktop Apps .... Tauri (Rust + TS) · Electron
-> [■■■■■■■■■□] Web Design ...... client websites · HTML/CSS/JS · Cloudflare Pages
-
-root@realrren:~$ ls ./projects
-> 🔒 [CLASSIFIED]  most projects are private & under active development
-> 📦 nexora-engine  quotes, invoices & estimating tools for contractors (Windows, online/offline)
-> ⛏️ adaptive-zombie-survival  Forge mod: zombies that break, dig & pillar up to reach you (MC 1.20.1)
-> 🌐 pyromax-site  website for Pyromax Engineering, a fire engineering consultancy (launching Dec 2026)
-
-root@realrren:~$ echo $STATUS
-> currently compiling something big... stay tuned_
-```
+<p align="center">
+  <img src="https://github.com/RealRren/RealRren/raw/main/assets/whoami.svg" width="95%" alt="whoami: RealRren, software developer building desktop apps, mobile apps, websites, games and Minecraft mods. Lead at Arcline Studios, Sri Lanka."/>
+</p>
 
 ---
 
 ### `> ls ./focus_areas/`
 
-<table align="center">
-  <tr>
-    <td align="center" width="25%">
-      <h3>🎮</h3>
-      <b><code>/game_dev</code></b><br/><br/>
-      Godot · Unreal Engine<br/>
-      Minecraft Forge<br/>
-      GDScript · C++ · Java<br/><br/>
-      <sub>gameplay systems, AI, survival &amp; zombie games, Minecraft mods</sub>
-    </td>
-    <td align="center" width="25%">
-      <h3>📱</h3>
-      <b><code>/mobile_apps</code></b><br/><br/>
-      React Native · Expo<br/>
-      TypeScript · Supabase<br/><br/>
-      <sub>cross-platform apps for Android &amp; iOS</sub>
-    </td>
-    <td align="center" width="25%">
-      <h3>🖥️</h3>
-      <b><code>/desktop_apps</code></b><br/><br/>
-      Tauri · Electron<br/>
-      Rust · TypeScript · JS<br/><br/>
-      <sub>fast native tools that work online &amp; offline</sub>
-    </td>
-    <td align="center" width="25%">
-      <h3>🌐</h3>
-      <b><code>/web_design</code></b><br/><br/>
-      HTML · CSS · JS<br/>
-      Cloudflare Pages<br/><br/>
-      <sub>fast, responsive websites for businesses</sub>
-    </td>
-  </tr>
-</table>
+<p align="center">
+  <img src="https://github.com/RealRren/RealRren/raw/main/assets/focus.svg" width="95%" alt="focus areas: game dev, mobile apps, desktop apps, web design"/>
+</p>
 
 ---
 

@@ -198,17 +198,14 @@ motto:            "it works on my machine" → ships it anyway
 
 ### `> ./contact --open`
 
-```bash
-root@realrren:~$ ./contact --open
-> status ....... 🟢 open for freelance work
-> services ..... websites · mobile apps · desktop apps · games · Minecraft mods
-> email ........ studiosarcline2@gmail.com
-> reply ........ usually within 24h
-```
+<p align="center">
+  <img src="https://github.com/RealRren/RealRren/raw/main/assets/contact.svg" width="95%" alt="contact: open for freelance work, websites, mobile apps, desktop apps, games and Minecraft mods, email studiosarcline2@gmail.com"/>
+</p>
 
 <p align="center">
-  <a href="mailto:studiosarcline2@gmail.com"><img src="https://img.shields.io/badge/EMAIL_ME-000000?style=for-the-badge&logo=gmail&logoColor=00ff41" alt="email me"/></a>
-  <img src="https://img.shields.io/badge/%E2%97%8F_OPEN_FOR_FREELANCE-000000?style=for-the-badge&logoColor=00ff41" alt="open for freelance"/>
+  <a href="mailto:studiosarcline2@gmail.com"><img src="https://github.com/RealRren/RealRren/raw/main/assets/btn-email.svg" height="40" alt="email me"/></a>
+  &nbsp;
+  <img src="https://github.com/RealRren/RealRren/raw/main/assets/btn-freelance.svg" height="40" alt="open for freelance"/>
 </p>
 
 ---

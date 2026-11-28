@@ -299,3 +299,61 @@ hud = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{HW}" height="{HH}" vie
 with open("assets/hud.svg", "w", encoding="utf-8") as f:
     f.write(hud)
 print("hud: LVL", level, [(b[0], b[2], b[3]) for b in bars])
+
+
+# ---------------------------------------------------------------------------
+# Activity graph (assets/activity.svg): last 31 days, drawn in-repo so it does
+# not depend on an outside graph service.
+span = dates[-31:]
+vals = [days[d] for d in span]
+AW, AH = 820, 300
+L_, R_, T_, B_ = 56, 24, 58, 50
+pw, ph = AW - L_ - R_, AH - T_ - B_
+top = max(vals) or 1
+step = 10 ** max(0, len(str(top)) - 1)
+ymax = ((top + step - 1) // step) * step
+if ymax / step <= 2:
+    step = step // 2 or 1
+pts = [(L_ + i * pw / (len(vals) - 1), T_ + ph - v / ymax * ph) for i, v in enumerate(vals)]
+line = " ".join(f"{x:.1f},{y:.1f}" for x, y in pts)
+area = f"M{L_},{T_+ph} L" + " L".join(f"{x:.1f},{y:.1f}" for x, y in pts) + f" L{L_+pw},{T_+ph} Z"
+seg = sum(((pts[i+1][0]-pts[i][0])**2 + (pts[i+1][1]-pts[i][1])**2) ** .5 for i in range(len(pts)-1))
+grid = []
+for k in range(0, ymax + 1, step):
+    y = T_ + ph - k / ymax * ph
+    grid.append(f'<line x1="{L_}" x2="{L_+pw}" y1="{y:.1f}" y2="{y:.1f}" stroke="#00ff41" stroke-opacity=".12"/>'
+                f'<text class="ax" x="{L_-10}" y="{y+4:.1f}" text-anchor="end">{k}</text>')
+for i in range(0, len(span), 5):
+    x = pts[i][0]
+    anc = "start" if i == 0 else "end" if i == len(span) - 1 else "middle"
+    grid.append(f'<text class="ax" x="{x:.1f}" y="{T_+ph+22}" text-anchor="{anc}">{dt.date.fromisoformat(span[i]):%b %d}</text>')
+peak_i = max(range(len(vals)), key=lambda i: vals[i])
+dots = "".join(
+    f'<circle cx="{x:.1f}" cy="{y:.1f}" r="{4.5 if i == peak_i else 2.6}" fill="{"#fff" if i == peak_i else "#9dffb0"}">'
+    f'<animate attributeName="opacity" values="0;0;1" keyTimes="0;{(0.15 + 1.8 * i / len(pts)) / (0.35 + 1.8 * i / len(pts)):.3f};1" dur="{0.35 + 1.8 * i / len(pts):.2f}s" begin="0s" fill="freeze"/></circle>'
+    for i, (x, y) in enumerate(pts))
+px_, py_ = pts[peak_i]
+peak_lbl = (f'<text class="pk" x="{min(max(px_, L_+60), L_+pw-60):.1f}" y="{py_-12:.1f}" text-anchor="middle">'
+            f'peak {vals[peak_i]}<animate attributeName="opacity" values="0;0;1" keyTimes="0;.84;1" dur="2.5s" begin="0s" fill="freeze"/></text>')
+act = f"""<svg xmlns="http://www.w3.org/2000/svg" width="{AW}" height="{AH}" viewBox="0 0 {AW} {AH}">
+<defs><linearGradient id="ag" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#00ff41" stop-opacity=".35"/><stop offset="1" stop-color="#00ff41" stop-opacity="0"/></linearGradient>
+<clipPath id="reveal"><rect x="{L_}" y="0" width="{pw}" height="{AH}"><animate attributeName="width" from="0" to="{pw}" dur="1.9s" begin="0s" fill="freeze"/></rect></clipPath></defs>
+<style>
+.t{{font:bold 15px 'Courier New',monospace;fill:#00ff41}}
+.ax{{font:11px 'Courier New',monospace;fill:#3f8f50}}
+.pk{{font:bold 12px 'Courier New',monospace;fill:#fff}}
+.s{{font:11px 'Courier New',monospace;fill:#3f8f50}}
+</style>
+<rect x="0.75" y="0.75" width="{AW-1.5}" height="{AH-1.5}" rx="8" fill="#000" stroke="#00ff41" stroke-width="1.5"/>
+<text class="t" x="24" y="32">root@realrren:~$ ./activity --last 31d</text>
+<text class="s" x="{AW-24}" y="32" text-anchor="end">{fmt(sum(vals))} contributions</text>
+{''.join(grid)}
+<g clip-path="url(#reveal)"><path d="{area}" fill="url(#ag)"/></g>
+<polyline points="{line}" fill="none" stroke="#00ff41" stroke-width="2.5" stroke-linejoin="round" stroke-dasharray="{seg:.0f}" stroke-dashoffset="0">
+<animate attributeName="stroke-dashoffset" from="{seg:.0f}" to="0" dur="1.9s" begin="0s" fill="freeze"/></polyline>
+{dots}{peak_lbl}
+<text class="s" x="{AW-24}" y="{AH-12}" text-anchor="end">updated {today:%Y-%m-%d}</text>
+</svg>"""
+with open("assets/activity.svg", "w", encoding="utf-8") as f:
+    f.write(act)
+print("activity: 31d total", sum(vals), "peak", vals[peak_i])

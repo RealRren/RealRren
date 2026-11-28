@@ -121,6 +121,10 @@ root@realrren:~$ echo $STATUS
   <a href="https://github.com/RealRren/nexora-engine-releases"><img src="./assets/card-nexora-releases.svg" width="49%" alt="nexora-engine-releases"/></a>
 </p>
 
+<p align="center">
+  <a href="https://github.com/RealRren/RealRren/tree/main/showcase"><img src="https://img.shields.io/badge/VIEW_CLIENT_WORK_%E2%86%92-000000?style=for-the-badge&logo=googlechrome&logoColor=00ff41" alt="view client work"/></a>
+</p>
+
 ```diff
 + [ACTIVE]      Nexora Engine ........ contractor quoting & invoicing for Windows
 + [ACTIVE]      Mobile apps .......... React Native + Supabase
@@ -189,6 +193,23 @@ motto:            "it works on my machine" → ships it anyway
 ```
 
 </details>
+
+---
+
+### `> ./contact --open`
+
+```bash
+root@realrren:~$ ./contact --open
+> status ....... 🟢 open for freelance work
+> services ..... websites · mobile apps · desktop apps · games · Minecraft mods
+> email ........ studiosarcline2@gmail.com
+> reply ........ usually within 24h
+```
+
+<p align="center">
+  <a href="mailto:studiosarcline2@gmail.com"><img src="https://img.shields.io/badge/EMAIL_ME-000000?style=for-the-badge&logo=gmail&logoColor=00ff41" alt="email me"/></a>
+  <img src="https://img.shields.io/badge/%E2%97%8F_OPEN_FOR_FREELANCE-000000?style=for-the-badge&logoColor=00ff41" alt="open for freelance"/>
+</p>
 
 ---
 
